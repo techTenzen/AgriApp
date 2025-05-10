@@ -1,0 +1,27 @@
+<div class="home-container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to AgriAPP Hyderabad</h1>
+      <p>Your comprehensive resource for agricultural information in Telangana</p>
+      <p class="mission">Empowering Hyderabad farmers with the right information at the right time.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>What We Offer</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">
+          <img [src]="feature.icon" alt="{{ feature.title }}" width="48" height="48">
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Start Exploring</h2>
+    <p>Navigate through our application using the menu above to discover valuable agricultural insights.</p>
+  </section>
+</div>

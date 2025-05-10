@@ -1,0 +1,33 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 60px; /* Space for fixed header */
+  margin-bottom: 60px; /* Space for fixed footer */
+}
+
+.view-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-height: 70vh;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 10px;
+  }
+  
+  .view-container {
+    padding: 15px;
+  }
+}

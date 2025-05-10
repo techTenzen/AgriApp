@@ -1,0 +1,15 @@
+<div class="app-container">
+  <app-header (viewChange)="onViewChange($event)"></app-header>
+  
+  <main class="main-content">
+    <div [ngSwitch]="currentView" class="view-container">
+      <app-home *ngSwitchCase="'home'"></app-home>
+      <app-crops *ngSwitchCase="'crops'"></app-crops>
+      <app-weather *ngSwitchCase="'weather'"></app-weather>
+      <app-market *ngSwitchCase="'market'"></app-market>
+      <app-contact *ngSwitchCase="'contact'"></app-contact>
+    </div>
+  </main>
+  
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,108 @@
+<div class="weather-container">
+  <h1>Hyderabad Weather Updates</h1>
+  <p class="intro">
+    Stay updated with Hyderabad's current weather conditions and forecasts to plan your agricultural activities effectively in Telangana's climate.
+  </p>
+  
+  <div class="weather-content">
+    <div class="current-weather">
+      <div class="weather-card">
+        <div class="weather-header">
+          <h2>Current Weather</h2>
+          <p class="location">{{ currentWeather.location }}</p>
+          <p class="date">{{ currentWeather.date }}</p>
+        </div>
+        
+        <div class="weather-body">
+          <div class="weather-icon" [ngClass]="currentWeather.iconClass">
+            <img *ngIf="currentWeather.iconClass === 'sunny'" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sunny" width="64" height="64">
+            
+            <img *ngIf="currentWeather.iconClass === 'partly-cloudy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png" alt="Partly Cloudy" width="64" height="64">
+            
+            <img *ngIf="currentWeather.iconClass === 'cloudy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146859.png" alt="Cloudy" width="64" height="64">
+            
+            <img *ngIf="currentWeather.iconClass === 'rainy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146858.png" alt="Rainy" width="64" height="64">
+            
+            <img *ngIf="currentWeather.iconClass === 'thunderstorm'" src="https://cdn-icons-png.flaticon.com/512/1146/1146860.png" alt="Thunderstorm" width="64" height="64">
+            
+            <img *ngIf="currentWeather.iconClass === 'windy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146866.png" alt="Windy" width="64" height="64">
+          </div>
+          
+          <div class="weather-info">
+            <div class="temperature">
+              <span>{{ currentWeather.temperature }}°C</span>
+              <p>{{ currentWeather.condition }}</p>
+            </div>
+            
+            <div class="details">
+              <div class="detail-item">
+                <span class="label">Humidity:</span>
+                <span class="value">{{ currentWeather.humidity }}%</span>
+              </div>
+              
+              <div class="detail-item">
+                <span class="label">Rainfall:</span>
+                <span class="value">{{ currentWeather.rainfall }}mm</span>
+              </div>
+              
+              <div class="detail-item">
+                <span class="label">Wind:</span>
+                <span class="value">{{ currentWeather.windSpeed }} km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="forecast">
+      <h2>5-Day Forecast</h2>
+      <div class="forecast-cards">
+        <div class="forecast-day" *ngFor="let day of forecast">
+          <h3>{{ day.day }}</h3>
+          
+          <div class="forecast-icon" [ngClass]="day.iconClass">
+            <img *ngIf="day.iconClass === 'sunny'" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Sunny" width="40" height="40">
+            
+            <img *ngIf="day.iconClass === 'partly-cloudy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png" alt="Partly Cloudy" width="40" height="40">
+            
+            <img *ngIf="day.iconClass === 'cloudy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146859.png" alt="Cloudy" width="40" height="40">
+            
+            <img *ngIf="day.iconClass === 'rainy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146858.png" alt="Rainy" width="40" height="40">
+            
+            <img *ngIf="day.iconClass === 'thunderstorm'" src="https://cdn-icons-png.flaticon.com/512/1146/1146860.png" alt="Thunderstorm" width="40" height="40">
+            
+            <img *ngIf="day.iconClass === 'windy'" src="https://cdn-icons-png.flaticon.com/512/1146/1146866.png" alt="Windy" width="40" height="40">
+          </div>
+          
+          <p class="condition">{{ day.condition }}</p>
+          
+          <div class="temp-range">
+            <span class="high">{{ day.highTemp }}°</span>
+            <span class="low">{{ day.lowTemp }}°</span>
+          </div>
+          
+          <div class="rain-chance">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#03A9F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+              <line x1="8" y1="16" x2="8" y2="16"></line>
+              <line x1="8" y1="20" x2="8" y2="20"></line>
+              <line x1="12" y1="18" x2="12" y2="18"></line>
+              <line x1="12" y1="22" x2="12" y2="22"></line>
+              <line x1="16" y1="16" x2="16" y2="16"></line>
+              <line x1="16" y1="20" x2="16" y2="20"></line>
+            </svg>
+            <span>{{ day.rainChance }}%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="farming-tips">
+      <h2>Weather-based Farming Tips</h2>
+      <ul>
+        <li *ngFor="let tip of farmingTips">{{ tip }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

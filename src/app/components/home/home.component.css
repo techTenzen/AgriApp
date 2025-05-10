@@ -1,0 +1,132 @@
+.home-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+  url('https://plus.unsplash.com/premium_photo-1694475122158-5c088fe408ea?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  color: #fefefe;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #d4edda; /* soft light green for visibility */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fefefe;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero .mission {
+  font-style: italic;
+  font-weight: 300;
+  color: #e8f5e9; /* softer greenish-white for contrast */
+}
+
+.features {
+  padding: 20px 0 40px;
+}
+
+.features h2 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.cta {
+  background-color: #E8EAF6;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cta p {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
